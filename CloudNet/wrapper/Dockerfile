@@ -1,4 +1,4 @@
-FROM openjdk:12
+FROM openjdk:11-jre
 WORKDIR /app/
-COPY ./CloudNet-Wrapper.jar /bin/CloudNet-Wrapper.jar
-CMD java -jar /bin/CloudNet-Wrapper.jar
+RUN wget -O /bin/Cloudnet-Wrapper.jar https://ci.cloudnetservice.eu/job/CloudNetService/job/CloudNet/job/master/lastSuccessfulBuild/artifact/cloudnet-wrapper/target/CloudNet-Wrapper.jar
+CMD ["java","-jar","/bin/Cloudnet-Wrapper.jar"]
