@@ -13,7 +13,7 @@ RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" 
 RUN apt-get update
 RUN apt-get install ca-certificates-mono mono-devel mono-complete -y
 # Python for youtube-dl
-RUN apt-get install python3.6
+RUN apt-get install python3.6 -y
 # Download Bot
 RUN curl -L https://github.com/Splamy/TS3AudioBot/releases/download/0.9.0/TS3AudioBot.zip -o /build/bot.zip
 RUN mkdir /opt/bot/
