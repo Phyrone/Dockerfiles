@@ -14,9 +14,10 @@ RUN apt-get update
 RUN apt-get install ca-certificates-mono mono-devel mono-complete -y
 # Download Bot
 RUN curl -L https://github.com/Splamy/TS3AudioBot/releases/download/0.9.0/TS3AudioBot.zip -o /build/bot.zip
-RUN unzip /build/bot.zip -d /app/
+RUN mkdir /opt/bot/
+RUN unzip /build/bot.zip -d /opt/bot/
 RUN rm -r /build/
 RUN mono --version
 WORKDIR /app/
 VOLUME /app/
-CMD ["mono","TS3AudioBot.exe"]
+CMD ["mono","/opt/bot/TS3AudioBot.exe"]
