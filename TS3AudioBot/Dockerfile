@@ -12,6 +12,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
 RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list
 RUN apt-get update
 RUN apt-get install ca-certificates-mono mono-devel mono-complete -y
+# Python for youtube-dl
+RUN apt-get install python3.6
 # Download Bot
 RUN curl -L https://github.com/Splamy/TS3AudioBot/releases/download/0.9.0/TS3AudioBot.zip -o /build/bot.zip
 RUN mkdir /opt/bot/
