@@ -13,7 +13,7 @@ RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" 
 RUN apt-get update
 RUN apt-get install ca-certificates-mono mono-devel mono-complete -y
 # Download Bot and Setup
-RUN curl -L https://github.com/Splamy/TS3AudioBot/releases/download/0.9.0/TS3AudioBot.zip -o /build/bot.zip
+RUN curl -L https://splamy.de/api/nightly/ts3ab/master/download -o /build/bot.zip
 RUN mkdir /opt/bot/
 RUN unzip /build/bot.zip -d /opt/bot/
 RUN rm -r /build/
