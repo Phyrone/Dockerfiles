@@ -12,12 +12,13 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
 RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list
 RUN apt-get update
 RUN apt-get install ca-certificates-mono mono-devel mono-complete -y
+RUN mono --version
 # Download Bot and Setup
 RUN curl -L https://splamy.de/api/nightly/ts3ab/develop/download -o /build/bot.zip
 RUN mkdir /opt/bot/
 RUN unzip /build/bot.zip -d /opt/bot/
 RUN rm -r /build/
-RUN mono --version
+COPY start.sh /opt/bot/start.sh
 WORKDIR /app/
 VOLUME /app/
 CMD youtbe-dl --update && mono /opt/bot/TS3AudioBot.exe
