@@ -19,6 +19,7 @@ RUN mkdir /opt/bot/
 RUN unzip /build/bot.zip -d /opt/bot/
 RUN rm -r /build/
 COPY start.sh /opt/bot/start.sh
+RUN chmod a+rx /opt/bot/start.sh
 WORKDIR /app/
 VOLUME /app/
-CMD youtbe-dl --update && mono /opt/bot/TS3AudioBot.exe
+CMD /opt/bot/start.sh
