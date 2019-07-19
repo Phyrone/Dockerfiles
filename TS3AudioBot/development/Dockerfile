@@ -20,4 +20,4 @@ RUN rm -r /build/
 RUN mono --version
 WORKDIR /app/
 VOLUME /app/
-CMD ["mono","/opt/bot/TS3AudioBot.exe"]
+CMD youtbe-dl --update && mono /opt/bot/TS3AudioBot.exe
