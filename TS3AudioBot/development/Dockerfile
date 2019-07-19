@@ -6,7 +6,7 @@ RUN mkdir /build/
 RUN apt-get update
 # Install Ffmpeg youtube-dl etc.
 RUN apt install curl unzip gnupg ca-certificates libopus-dev python-pip ffmpeg -y
-RUN pip install --upgrade youtube_dl
+RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && chmod a+rx /usr/local/bin/youtube-dl
 # Install MONO
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list
