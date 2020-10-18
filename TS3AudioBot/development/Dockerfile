@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:bionic
 MAINTAINER Phyrone<phyrone@phyrone.de>
 ENV DEBIAN_FRONTEND=noninteractive 
 ENV MONO_VERSION 5.20.1.19
